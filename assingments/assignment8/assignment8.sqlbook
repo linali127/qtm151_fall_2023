@@ -4,17 +4,20 @@
 ## Submit this file. No need to convert to HTML
 -- SQLBook: Markup
 <font size = "5">
-Add a comment with your Emory ID below
+Print your name below
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@postgres
 -- Write your own code
-
+SELECT'2561528';
 -- SQLBook: Markup
 <font size = "5">
 
 (a) Create a new SQL database called formula1
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@formula1
 -- Write your own code
-
+DROP DATABASE IF EXISTS formula1;
+CREATE DATABASE formula1;
 -- SQLBook: Markup
 
 <font size = "5">
@@ -69,8 +72,11 @@ Hints:
 - In SQL you only need a single equality "="
 - In SQL use single quotes for logical conditions with strings '...'
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@formula1
 -- Write your own code
-
+SELECT * FROM drivers
+WHERE nationality = 'American'
+ORDER BY surname ASC;
 -- SQLBook: Markup
 <font size = "5">
 
@@ -85,7 +91,10 @@ HINT: See the lecture 17 for details<br>
 HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@formula1
 -- Write your own code
+SELECT COUNT(DISTINCT "driverId") AS num_distinct_driverId
+FROM drivers
 
 -- SQLBook: Markup
 <font size = "5">
@@ -95,14 +104,22 @@ upper case and lower case letters
 <font size = "3">
 
 - Obtain the average of "milliseconds" by "driverId" using ```GROUP BY```
-- Use ```ORDER BY ``` to sort by the average of "milliseconds"
+- User ```ORDER BY ``` to sort on the sum of points
 
 HINT: See the end of lectures 17 and 18 for details <br>
 HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@formula1
 -- Write your own code
+SELECT AVG(milliseconds) as mean_time
+FROM lap_times
+GROUP BY "driverId";
 
+SELECT SUM(points) AS sum_points
+FROM lap_times
+GROUP BY "driverId";
+ORDER sum_points BY ASC
 -- SQLBook: Markup
 <font size = "5">
 
@@ -118,4 +135,8 @@ HINT: See the lecture 18 for details <br>
 HINT: Include "driverId" in quotations since it has a mix of <br>
 upper case and lower case letters
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@formula1
 -- Write your own code
+SELECT * FROM lap_times
+LEFT JOIN drivers
+ON lap_times."driverId" = drivers."driverId"
