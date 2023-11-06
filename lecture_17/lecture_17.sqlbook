@@ -30,9 +30,10 @@ United States Congress dataset
 
 DROP DATABASE IF EXISTS us_congress;
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@postgres
 CREATE DATABASE us_congress;
 -- SQLBook: Code
--- Active: 1698674191041@@127.0.0.1@5432@us_congress
+-- Active: 1698867731805@@127.0.0.1@5432@us_congress
 CREATE SCHEMA bills;
 
 CREATE SCHEMA members;
@@ -190,6 +191,7 @@ GROUP BY party_name;
 
 Merge Databases
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@postgres
 -- FROM indicates the primary table
 -- LEFT JOIN indicates the secondary table for merging
 -- ON ... = ... is the matching column

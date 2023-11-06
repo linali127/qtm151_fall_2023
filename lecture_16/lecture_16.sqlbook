@@ -49,6 +49,7 @@ DROP TABLE IF EXISTS drivers;
 
 Create empty table from codebook
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@postgres
 -- Create empty TABLE called "drivers"
 -- This example has five arguments separated by a comma
 -- that contain the "column_name" and "column_type", respectively
@@ -64,6 +65,7 @@ CREATE TABLE drivers(
 
 Add rows to table
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@postgres
 -- "INSET INTO" adds rows with VALUES ... to the bottom of the table
 -- In SQL different lines need to be separated by a semicolon ";"
 -- You write system commands in capital letters to easily distinguish
@@ -96,6 +98,7 @@ Try it yourself!
 
 - Add two/three more rows on your own
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@postgres
 -- Add your name/nationality and your neighbors'
 -- Select a new driver id (needs to be unique)
 -- Make sure to deparate arguments by a semicolon!
@@ -198,6 +201,7 @@ WHERE victories > 60
 
 Groupby + Aggregate
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@postgres
 -- This command computes summary statistics by nationalitySELECT COUNT(*) AS num_rows,
 -- Including "nationality" (the grouping column) is optional in the select
 SELECT nationality,
@@ -212,6 +216,7 @@ GROUP BY nationality;
 
 Subsetting **after** aggregating
 -- SQLBook: Code
+-- Active: 1698867731805@@127.0.0.1@5432@postgres
 -- This command computes the same table as above
 -- then filters with HAVING
 -- HAVING is the command you use to subset *after* aggregating
