@@ -4,11 +4,12 @@
 ## Submit this file. No need to convert to HTML
 -- SQLBook: Markup
 <font size = "5">
-Print your name below
+Add a comment with your Emory ID below
 -- SQLBook: Code
 -- Active: 1698867731805@@127.0.0.1@5432@postgres
 -- Write your own code
-SELECT'2561528';
+
+-- 2561528
 -- SQLBook: Markup
 <font size = "5">
 
@@ -104,7 +105,7 @@ FROM drivers
 <font size = "3">
 
 - Obtain the average of "milliseconds" by "driverId" using ```GROUP BY```
-- User ```ORDER BY ``` to sort on the sum of points
+- User ```ORDER BY ``` to sort by the average of 'milliseconds"
 
 HINT: See the end of lectures 17 and 18 for details <br>
 HINT: Include "driverId" in quotations since it has a mix of <br>
@@ -114,12 +115,9 @@ upper case and lower case letters
 -- Write your own code
 SELECT AVG(milliseconds) as mean_time
 FROM lap_times
-GROUP BY "driverId";
+GROUP BY "driverId"
+ORDER BY AVG(milliseconds) ASC;
 
-SELECT SUM(points) AS sum_points
-FROM lap_times
-GROUP BY "driverId";
-ORDER sum_points BY ASC
 -- SQLBook: Markup
 <font size = "5">
 
